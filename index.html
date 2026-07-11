@@ -41,7 +41,7 @@
             
             <!-- Columna Izquierda: Reviews / Social Proof -->
             <div class="md:col-span-3 flex flex-col justify-center order-2 md:order-1">
-                <div class="text-sm font-semibold tracking-tight mb-1">100+ reviews <span class="text-stone-400 font-normal">(4.98 of 5)</span></div>
+                <div class="text-sm font-semibold tracking-tight mb-1">+100 reseñas <span class="text-stone-400 font-normal">(4.98 de 5)</span></div>
                 <p class="text-xs text-stone-500 max-w-[200px] leading-relaxed">Trazos finos y precisos, tatuajes que se sienten tan naturales como se ven.</p>
             </div>
 
@@ -58,7 +58,7 @@
                     Hola, soy Haditas — especializada en fineline y blackwork, tatuajes delicados con líneas limpias y duraderas.
                 </p>
                 <a href="https://www.instagram.com/haditas_tattoos?igsh=ZHUxajNvdHY5YXBn" target="_blank" rel="noopener" class="inline-block bg-black text-white text-[11px] uppercase tracking-[0.2em] font-semibold py-4 px-8 text-center hover:bg-stone-800 transition shadow-md">
-                    Get in touch
+                    Escribime
                 </a>
             </div>
 
@@ -66,7 +66,7 @@
 
         <!-- Franja Negra Inferior (Inspirada en el ejemplo) -->
         <div class="w-full bg-black py-6 text-center text-white text-[10px] uppercase tracking-[0.3em] font-semibold">
-            Featured in custom ink & fine-line art
+            Tatuajes finos hechos a mano · Fineline &amp; Blackwork
         </div>
 
     </header>
@@ -210,7 +210,7 @@
                 const isActive = index === activeIndex;
                 const div = document.createElement('div');
 
-                div.className = `accordion-item relative h-full rounded-2xl overflow-hidden cursor-pointer border-4 border-white shadow-lg ${isActive ? 'w-[400px]' : 'w-[60px]'}`;
+                div.className = `accordion-item relative h-full rounded-2xl overflow-hidden cursor-pointer border-4 border-white shadow-lg ${isActive ? 'w-[min(400px,62vw)]' : 'w-[clamp(28px,8vw,60px)]'}`;
 
                 div.innerHTML = `
                     <img src="${item.imageUrl}" class="absolute inset-0 w-full h-full object-cover" alt="${item.title} - tatuaje Haditas Tattoos" />
@@ -236,9 +236,9 @@
             const items = document.querySelectorAll('.accordion-item');
             items.forEach((el, idx) => {
                 if (idx === activeIndex) {
-                    el.classList.replace('w-[60px]', 'w-[400px]');
+                    el.classList.replace('w-[clamp(28px,8vw,60px)]', 'w-[min(400px,62vw)]');
                 } else {
-                    el.classList.replace('w-[400px]', 'w-[60px]');
+                    el.classList.replace('w-[min(400px,62vw)]', 'w-[clamp(28px,8vw,60px)]');
                 }
                 const span = el.querySelector('span');
                 if (idx === activeIndex) {
